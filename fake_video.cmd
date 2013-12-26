@@ -2,6 +2,7 @@
 mkdir tmp
 for %%f in (*.jpg) do (
 copy %%f tmp
+del %%~nf.avi
 pushd tmp
 for /L %%i in (1,1,25) do (
 convert %%f %%~nf.%%i.png
@@ -13,6 +14,7 @@ popd
 )
 for %%f in (*.png) do (
 copy %%f tmp
+del %%~nf.avi
 pushd tmp
 for /L %%i in (1,1,25) do (
 convert %%f %%~nf.%%i.png
